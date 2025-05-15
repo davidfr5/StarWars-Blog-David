@@ -1,0 +1,38 @@
+/* General spacing for page sections */
+.section-title {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Container for each horizontal scroll section */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+/* Card styling */
+.card-custom {
+  width: 18rem;
+  margin: 0.5rem;
+  flex-shrink: 0;
+}
+
+.card-custom img {
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+
+/* Style the "Ver más" and favorite buttons */
+.btn-ver-mas {
+  margin-right: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
