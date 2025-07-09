@@ -7,17 +7,20 @@ const Home = () => {
     const [vehicles, setVehicles] = useState([]);
 
     useEffect(() => {
-        fetch("https://www.swapi.tech/api/people")
+        fetch("https://animated-space-zebra-jwvvqvprw9xh5vwr-5000.app.github.dev/api/people")
             .then(res => res.json())
-            .then(data => setPeople(data.results));
+            .then(data => setPeople(data))
+            .catch(err => console.error("Error fetching people:", err));
 
-        fetch("https://www.swapi.tech/api/planets")
+        fetch("https://animated-space-zebra-jwvvqvprw9xh5vwr-5000.app.github.dev/api/planets")
             .then(res => res.json())
-            .then(data => setPlanets(data.results));
+            .then(data => setPlanets(data))
+            .catch(err => console.error("Error fetching planets:", err));
 
         fetch("https://www.swapi.tech/api/vehicles")
             .then(res => res.json())
-            .then(data => setVehicles(data.results));
+            .then(data => setVehicles(data.results))
+            .catch(err => console.error("Error fetching vehicles:", err));
     }, []);
 
     return (
@@ -25,14 +28,14 @@ const Home = () => {
             <h2>Personajes</h2>
             <div className="d-flex overflow-auto">
                 {people.map(person => (
-                    <Card key={person.uid} item={person} type="people" />
+                    <Card key={person.id} item={{uid: person.id, name: person.name}} type="people" />
                 ))}
             </div>
 
             <h2>Planetas</h2>
             <div className="d-flex overflow-auto">
                 {planets.map(planet => (
-                    <Card key={planet.uid} item={planet} type="planets" />
+                    <Card key={planet.id} item={{uid: planet.id, name: planet.name}} type="planets" />
                 ))}
             </div>
 

@@ -15,7 +15,7 @@ const Card = ({ item, type }) => {
                 <Link to={`/${type}/${item.uid}`} className="btn btn-primary btn-ver-mas">Ver más</Link>
                 <button className="btn btn-outline-warning" onClick={() => addFavorite({ ...item, type })}>
                     ⭐
-                </button>
+                </button> 
             </div>
         </div>
     );
